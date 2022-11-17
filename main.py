@@ -33,6 +33,7 @@ async def get_json_data(
     try:
         with open("search.json", "r") as json_file:
             data = json.load(json_file)[page * limit: (page + 1) * limit]
+            print (data)
     except Exception as error:
         logger.error(f"Error reading json file: {error}")
 
@@ -54,6 +55,6 @@ async def get_json_data(
                 row_data['site'] = row['site']
             json_data.append(row_data)
 
-        return { data: json_data }
+        return { "data": json_data }
 
     raise HTTPException(400, "Bad Request")
