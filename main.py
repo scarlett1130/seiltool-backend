@@ -54,6 +54,6 @@ async def get_json_data(
                 row_data['site'] = row['site']
             json_data.append(row_data)
 
-        return { 'data': json_data }
+        return { data: json_data }
 
     raise HTTPException(400, "Bad Request")
